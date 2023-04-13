@@ -78,8 +78,8 @@ class BinarySearchTree{
    */
    
    /**
-    * Prints a preorder traversal of the binary tree.
-    * @param root The root of the binary tree.
+    * Prints a preorder traversal of the binary search tree.
+    * @param root The root of the binary search tree.
     */
    public void preOrderTraversal(Node root){
 	   if (root == null) {
@@ -97,8 +97,8 @@ class BinarySearchTree{
    */
    
    /**
-    * Prints an inorder traversal of the binary tree.
-    * @param root The root of the binary tree.
+    * Prints an inorder traversal of the binary search tree.
+    * @param root The root of the binary search tree.
     */
    public void inOrderTraversal(Node root){
 	   if (root == null) {
@@ -116,8 +116,8 @@ class BinarySearchTree{
    */
    
    /**
-    * Prints a postorder traversal of the binary tree.
-    * @param root The root of the binary tree.
+    * Prints a postorder traversal of the binary search tree.
+    * @param root The root of the binary search tree.
     */
    public void postOrderTraversal(Node root){
 	   if (root == null) {
@@ -134,9 +134,23 @@ class BinarySearchTree{
    a method to find the node in the tree
    with a specific value
    */
+   
+   /**
+    * Searches the binary search tree for an certain key, then returns whether the value is in the tree.
+    * @param root The root of the binary search tree.
+    * @param key The value to search for.
+    * @return Boolean value representing if the key value is in the tree.
+    */
    public boolean find(Node root, int key){
-	  //implement me
-      return false;           
+	  if(root == null) {
+		  return false;
+	  } else if(key < root.value) {
+		  return find(root.left, key);
+	  } else if(key > root.value) {
+		  return find(root.right, key);
+	  } else {
+		  return true;
+	  }         
    }
    
    
